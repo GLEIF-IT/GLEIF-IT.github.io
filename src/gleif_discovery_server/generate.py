@@ -1,10 +1,8 @@
-# -*- encoding: utf-8 -*-
 """
 vLEI module
 
 """
 
-import argparse
 import json
 import os
 from pathlib import Path
@@ -37,22 +35,16 @@ def populate_saids(
 
 
 def main():
-    parser = argparse.ArgumentParser(description="SAIDidy VRD Schema")
-    args = parser.parse_args()
-
     path = Path(__file__).parent.parent.parent
 
-    for p in [f"{path}/discovery-schema.json"]:
+    for p in [f"{path}/schema.json", f"{path}/.well-known/index.json"]:
         s = __load(p)
-        s["properties"]["e"]["oneOf"][1]["properties"]["le"]["properties"]["s"][
-            "const"
-        ] = args.le
         s = populate_saids(s)
         __save(p, s)
 
 
 def __load(p):
-    ff = open(p, "r")
+    ff = open(p)
     jsn = json.load(ff)
     ff.close()
     return jsn

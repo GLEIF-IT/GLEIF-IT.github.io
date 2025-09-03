@@ -16,6 +16,7 @@ dependencies = [
 [project.scripts]
 gleif-serve = "gleif_discovery_server.server:main"
 gleif-test = "gleif_discovery_server.test:main"
+saidify = "gleif_discovery_server.generate:main"
 
 [project.urls]
 Homepage = "https://github.com/GLEIF-IT/GLEIF-IT.github.io"

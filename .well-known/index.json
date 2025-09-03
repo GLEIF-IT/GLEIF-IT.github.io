@@ -1,5 +1,5 @@
 {
-  "$id":"",
+  "$id": "EAyAqJjqLHZqkF7gHoFEagEJNoqNa5TEZlDPdJaVC3GD",
   "name": "GLEIF Well-Known Resources",
   "description": "GLEIF well-known resources for GLEIF, Schema, and Witness discovery",
   "version": "1.0.0",
@@ -26,7 +26,6 @@
     "schema": {
       "name": "Schema Resources",
       "description": "GLEIF vLEI credential schema definitions",
-      "$id": "",
       "schemas": {
         "ENPXp1vQzRF6JwIuS-mp2U8Uf1MoADoP_GqQ62VsDZWY": {
           "title": "Legal Entity vLEI Credential",
@@ -75,7 +74,6 @@
     "witness": {
       "name": "Witness Resources",
       "description": "KERI witness identifiers and their OOBIs",
-      "$id": "",
       "witnesses": {
         "BDkq35LUU63xnFmfhljYYRY0ymkCg7goyeCxN30tsvmS": {
           "oobi": "/witness/oobi/BDkq35LUU63xnFmfhljYYRY0ymkCg7goyeCxN30tsvmS/index.json"
@@ -111,7 +109,6 @@
     }
   },
   "metadata": {
-    "$id": "",
     "organization": "Global Legal Entity Identifier Foundation (GLEIF)",
     "contact": "https://www.gleif.org",
     "documentation": "https://gleif-it.github.io/.well-known/"

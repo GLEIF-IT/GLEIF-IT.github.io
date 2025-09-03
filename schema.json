@@ -1,9 +1,16 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "EOxm1erpuJtjy9bBWO6Wgp9iggefDTNsM6DpO8-jUKbU",
   "title": "Well-Known Resources Discovery",
   "description": "JSON Schema for well-known resource discovery",
   "type": "object",
-  "required": ["name", "description", "version", "updated", "resources"],
+  "required": [
+    "name",
+    "description",
+    "version",
+    "updated",
+    "resources"
+  ],
   "properties": {
     "$id": {
       "type": "string",
@@ -47,7 +54,7 @@
               "type": "object",
               "description": "KERI identifiers",
               "patternProperties": {
-                "^E[A-Za-z0-9_-]{43}$": {
+                "^[A-Za-z0-9_-]+$": {
                   "type": "object",
                   "description": "KERI identifier entry",
                   "properties": {
@@ -57,18 +64,24 @@
                     },
                     "oobi": {
                       "type": "string",
-                      "pattern": "^/keri/oobi/E[A-Za-z0-9_-]{43}/index\\.json$",
                       "description": "Path to the OOBI for this identifier"
                     }
                   },
-                  "required": ["name", "oobi"],
+                  "required": [
+                    "name",
+                    "oobi"
+                  ],
                   "additionalProperties": false
                 }
               },
               "additionalProperties": false
             }
           },
-          "required": ["name", "description", "aids"],
+          "required": [
+            "name",
+            "description",
+            "aids"
+          ],
           "additionalProperties": false
         },
         "schema": {
@@ -91,7 +104,7 @@
               "type": "object",
               "description": "Available schemas",
               "patternProperties": {
-                "^E[A-Za-z0-9_-]{43}$": {
+                "^[A-Za-z0-9_-]+$": {
                   "type": "object",
                   "description": "Schema definition entry",
                   "properties": {
@@ -109,18 +122,26 @@
                     },
                     "oobi": {
                       "type": "string",
-                      "pattern": "^/schema/oobi/E[A-Za-z0-9_-]{43}/index\\.json$",
                       "description": "Path to the schema OOBI"
                     }
                   },
-                  "required": ["title", "type", "version", "oobi"],
+                  "required": [
+                    "title",
+                    "type",
+                    "version",
+                    "oobi"
+                  ],
                   "additionalProperties": false
                 }
               },
               "additionalProperties": false
             }
           },
-          "required": ["name", "description", "schemas"],
+          "required": [
+            "name",
+            "description",
+            "schemas"
+          ],
           "additionalProperties": false
         },
         "witness": {
@@ -143,24 +164,29 @@
               "type": "object",
               "description": "Available witnesses",
               "patternProperties": {
-                "^B[A-Za-z0-9_-]{43}$": {
+                "^[A-Za-z0-9_-]+$": {
                   "type": "object",
                   "description": "Witness OOBI entry",
                   "properties": {
                     "oobi": {
                       "type": "string",
-                      "pattern": "^/witness/oobi/B[A-Za-z0-9_-]{43}/index\\.json$",
                       "description": "Path to the witness OOBI"
                     }
                   },
-                  "required": ["oobi"],
+                  "required": [
+                    "oobi"
+                  ],
                   "additionalProperties": false
                 }
               },
               "additionalProperties": false
             }
           },
-          "required": ["name", "description", "witnesses"],
+          "required": [
+            "name",
+            "description",
+            "witnesses"
+          ],
           "additionalProperties": false
         }
       },
@@ -189,7 +215,11 @@
           "description": "Documentation URL"
         }
       },
-      "required": ["organization", "contact", "documentation"],
+      "required": [
+        "organization",
+        "contact",
+        "documentation"
+      ],
       "additionalProperties": false
     }
   },
