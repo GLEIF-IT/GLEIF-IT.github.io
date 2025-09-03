@@ -41,3 +41,9 @@ for oobi_path in $OOBI_PATHS; do
     echo
 done
 ```
+
+## Schema SAID
+
+```bash
+uv run saidify
+```
