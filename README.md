@@ -17,7 +17,7 @@ uv sync
 ### Start the Server
 
 ```bash
-uv run gleif-serve
+uv run serve
 
 ```
 
@@ -40,4 +40,10 @@ for oobi_path in $OOBI_PATHS; do
     curl -s "${BASE_URL}${oobi_path}"
     echo
 done
+```
+
+## Schema SAID
+
+```bash
+uv run saidify
 ```
