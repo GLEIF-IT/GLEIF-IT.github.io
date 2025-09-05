@@ -1,0 +1,38 @@
+[project]
+name = "gleif-discovery-server"
+version = "1.0.0"
+description = "Local HTTP server for testing GLEIF well-known resources"
+readme = "README.md"
+authors = [
+    { name = "Kevin Griffin", email = "kevin.griffin@gleif.org" }
+]
+license = { text = "Apache2-0" }
+requires-python = ">=3.12.2"
+dependencies = [
+    "keri==1.2.6",
+    "requests>=2.28.0",
+]
+
+[project.scripts]
+gleif-serve = "gleif_discovery_server.server:main"
+gleif-test = "gleif_discovery_server.test:main"
+saidify = "gleif_discovery_server.generate:main"
+
+[project.urls]
+Homepage = "https://github.com/GLEIF-IT/GLEIF-IT.github.io"
+Repository = "https://github.com/GLEIF-IT/GLEIF-IT.github.io"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv]
+dev-dependencies = []
+
+[tool.ruff]
+line-length = 127
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "N", "UP"]
+ignore = []
