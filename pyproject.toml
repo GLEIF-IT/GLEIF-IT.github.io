@@ -14,8 +14,7 @@ dependencies = [
 ]
 
 [project.scripts]
-gleif-serve = "gleif_discovery_server.server:main"
-gleif-test = "gleif_discovery_server.test:main"
+serve = "gleif_discovery_server.server:main"
 saidify = "gleif_discovery_server.generate:main"
 
 [project.urls]

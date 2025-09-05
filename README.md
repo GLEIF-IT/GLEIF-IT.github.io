@@ -17,7 +17,7 @@ uv sync
 ### Start the Server
 
 ```bash
-uv run gleif-serve
+uv run serve
 
 ```
 
