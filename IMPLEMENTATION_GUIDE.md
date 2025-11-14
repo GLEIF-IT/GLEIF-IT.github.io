@@ -8,31 +8,27 @@ This document describes the OOBI (Out-of-Band Introduction) dual directory struc
 
 Both `.well-known/{schema,keri,witness}/oobi/` and `/oobi/` directory structures exist. The `/oobi/` directory contains copies of files from `.well-known/schema/oobi/` and `.well-known/keri/oobi/` subdirectories.
 
-## Change Type
-
-Non-breaking. Both directory structures are maintained with synchronized content.
-
 ## URL Structures
 
 Subdirectory structure:
 
 ```text
-https://gleif-it.github.io/.well-known/schema/oobi/{ID}/index.json
-https://gleif-it.github.io/.well-known/keri/oobi/{ID}/index.json
-https://gleif-it.github.io/.well-known/witness/oobi/{ID}/index.json
+https://gleif-it.github.io/.well-known/schema/oobi/{SAID}/index.json
+https://gleif-it.github.io/.well-known/keri/oobi/{SAID}/index.json
+https://gleif-it.github.io/.well-known/witness/oobi/{SAID}/index.json
 ```
 
 Flat structure:
 
 ```text
-https://gleif-it.github.io/oobi/{ID}/index.json
+https://gleif-it.github.io/oobi/{SAID}/index.json
 ```
 
 ### Resource Availability
 
-- Schema OOBIs: Available at both `/.well-known/schema/oobi/{ID}/` and `/oobi/{ID}/`
-- KERI OOBIs: Available at both `/.well-known/keri/oobi/{ID}/` and `/oobi/{ID}/`
-- Witness OOBIs: Available at `/.well-known/witness/oobi/{ID}/` only
+- Schema OOBIs: Available at both `/.well-known/schema/oobi/{SAID}/` and `/oobi/{SAID}/`
+- KERI OOBIs: Available at both `/.well-known/keri/oobi/{SAID}/` and `/oobi/{SAID}/`
+- Witness OOBIs: Available at `/.well-known/witness/oobi/{SAID}/` only
 
 ## Affected OOBI IDs
 
@@ -40,8 +36,8 @@ https://gleif-it.github.io/oobi/{ID}/index.json
 
 Available at both locations:
 
-- `/.well-known/schema/oobi/{ID}/index.json`
-- `/oobi/{ID}/index.json`
+- `/.well-known/schema/oobi/{SAID}/index.json`
+- `/oobi/{SAID}/index.json`
 
 1. `ENPXp1vQzRF6JwIuS-mp2U8Uf1MoADoP_GqQ62VsDZWY` - Legal Entity vLEI Credential
 2. `EBfdlu8R27Fbx-ehrqwImnK-8Cm79sqbAQ4MmvEAYqao` - Qualified vLEI Issuer Credential
@@ -55,8 +51,8 @@ Available at both locations:
 
 Available at both locations:
 
-- `/.well-known/keri/oobi/{ID}/index.json`
-- `/oobi/{ID}/index.json`
+- `/.well-known/keri/oobi/{SAID}/index.json`
+- `/oobi/{SAID}/index.json`
 
 1. `EDP1vHcw_wc4M__Fj53-cJaBnZZASd-aMTaSyWEQ-PC2`
 2. `EINmHd5g7iV-UldkkkKyBIH052bIyxZNBn9pq-zNrYoS`
@@ -64,7 +60,7 @@ Available at both locations:
 
 ### Witness OOBIs (10+ files)
 
-Available at `/.well-known/witness/oobi/{ID}/index.json` only.
+Available at `/.well-known/witness/oobi/{SAID}/index.json` only.
 
 ## Usage
 
@@ -75,14 +71,14 @@ Both patterns serve identical content:
 Subdirectory structure:
 
 ```text
-https://gleif-it.github.io/.well-known/schema/oobi/{ID}/index.json
-https://gleif-it.github.io/.well-known/keri/oobi/{ID}/index.json
+https://gleif-it.github.io/.well-known/schema/oobi/{SAID}/index.json
+https://gleif-it.github.io/.well-known/keri/oobi/{SAID}/index.json
 ```
 
 Flat structure:
 
 ```text
-https://gleif-it.github.io/oobi/{ID}/index.json
+https://gleif-it.github.io/oobi/{SAID}/index.json
 ```
 
 ## Maintainer Workflow
@@ -90,9 +86,9 @@ https://gleif-it.github.io/oobi/{ID}/index.json
 ### Updating OOBI Files
 
 1. Update files in `.well-known` structure:
-   - Schema OOBIs: `.well-known/schema/oobi/{ID}/index.json`
-   - KERI OOBIs: `.well-known/keri/oobi/{ID}/index.json`
-   - Witness OOBIs: `.well-known/witness/oobi/{ID}/index.json`
+   - Schema OOBIs: `.well-known/schema/oobi/{SAID}/index.json`
+   - KERI OOBIs: `.well-known/keri/oobi/{SAID}/index.json`
+   - Witness OOBIs: `.well-known/witness/oobi/{SAID}/index.json`
 
 2. Run sync script:
 
@@ -125,12 +121,12 @@ https://gleif-it.github.io/oobi/{ID}/index.json
 
 ```text
 .well-known/
-├── schema/oobi/{ID}/index.json
-├── keri/oobi/{ID}/index.json
-└── witness/oobi/{ID}/index.json
+├── schema/oobi/{SAID}/index.json
+├── keri/oobi/{SAID}/index.json
+└── witness/oobi/{SAID}/index.json
 
 oobi/
-└── {ID}/index.json
+└── {SAID}/index.json
 ```
 
 ### Implementation
@@ -164,8 +160,8 @@ vLEI credential schemas
 
 Available at:
 
-- `https://gleif-it.github.io/.well-known/schema/oobi/{ID}/index.json`
-- `https://gleif-it.github.io/oobi/{ID}/index.json`
+- `https://gleif-it.github.io/.well-known/schema/oobi/{SAID}/index.json`
+- `https://gleif-it.github.io/oobi/{SAID}/index.json`
 
 ### KERI OOBIs
 
@@ -173,8 +169,8 @@ Witness endpoint configurations for KERI infrastructure
 
 Available at:
 
-- `https://gleif-it.github.io/.well-known/keri/oobi/{ID}/index.json`
-- `https://gleif-it.github.io/oobi/{ID}/index.json`
+- `https://gleif-it.github.io/.well-known/keri/oobi/{SAID}/index.json`
+- `https://gleif-it.github.io/oobi/{SAID}/index.json`
 
 ### Witness OOBIs
 
@@ -182,7 +178,7 @@ Witness network node information
 
 Available at:
 
-- `https://gleif-it.github.io/.well-known/witness/oobi/{ID}/index.json`
+- `https://gleif-it.github.io/.well-known/witness/oobi/{SAID}/index.json`
 
 ## Migration to .well-known
 
